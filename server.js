@@ -23,7 +23,7 @@ var db = mongoose.connect(connectionString);
 
 
 var columnSchema = new mongoose.Schema({
-    entry: [entryNum:[{"#Uploaded_variation": String,
+    entry: [[{"#Uploaded_variation": String,
     Location: String,
     Allele: String,
     Gene: String,
