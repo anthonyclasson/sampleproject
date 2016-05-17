@@ -1,0 +1,33 @@
+<div id="page-wrapper">
+    <div class="col-lg-2">
+        <div class="form-group">
+            <label>Select category to search: </label>
+            <select class="form-control" ng-model="category" ng-change="GetValue()">
+                <option ng-repeat="key in keys">{{key}}</option>
+            </select>
+        </div>
+        
+    </div>
+    
+    <div class="col-lg-4" ng-show="selected">
+        <div class="form-group">
+             <label>Search {{category}}:</label>
+             <input type="text" class="form-control" ng-model="search[category]">
+        </div><!-- /input-group --> 
+    </div>
+    <div class="col-lg-1" ng-show="selected">
+            <label>Show:</label>
+            <select class="form-control" ng-model="pageSize" ng-options="pageSizeOption.value as pageSizeOption.label for pageSizeOption in pageSizeOptions">
+            </select>
+    </div>
+    <div class="panel-body">
+            <div>
+                <table class="table responsive-table">
+                    <th ng-repeat="key in keys">{{key}}</th>                 
+                    <tr ng-repeat="column in columns | filter:search">
+                        <td ng-repeat="key in keys">{{column[key]}}</td>
+                    </tr>
+                </table>
+            </div>
+    </div>
+</div>

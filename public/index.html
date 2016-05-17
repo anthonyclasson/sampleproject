@@ -1,0 +1,55 @@
+<html lang="en" ng-app="SampleProject">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>DFCI Sample Project</title>
+     
+    <!--Bootstrap CSS CDN-->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+    
+    <!--jQuery CDN-->
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    
+    <!--Bootstrap JS CDN-->
+    <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <!--Angular JS CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    
+    <!--Angular JS Routing CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.min.js"></script>
+    
+    <!--Scripts-->
+    <script src="./client/app.js"></script>
+    <script src="./client/config.js"></script>
+    
+    <style>
+        .vert-offset-top-5{
+            margin-top: 5em;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+                                <div ng-include="'client/pages/header/header.view.html'"></div>
+        </div>
+        <div class="vert-offset-top-5">
+            <div ng-view></div>
+        </div>
+    </div>
+    
+    <script src="./client/pages/header/header.controller.js"></script>
+    <script src="./client/pages/home/home.controller.js"></script>
+    <script src="./client/services/HomeService.js"></script>
+</body>
+
+</html>
