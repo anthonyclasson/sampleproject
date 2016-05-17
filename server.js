@@ -22,8 +22,8 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
 var db = mongoose.connect(connectionString);
 
 
-var columnSchema = new mongoose.Schema([{
-    entry: {"#Uploaded_variation": String,
+var columnSchema = new mongoose.Schema({
+    "#Uploaded_variation": String,
     Location: String,
     Allele: String,
     Gene: String,
@@ -36,8 +36,8 @@ var columnSchema = new mongoose.Schema([{
     Amino_acids: String,
     Codons: String,
     Existing_variation:String,
-    Extra: String}
-}], {collection: "data"});
+    Extra: String
+}, {collection: "data"});
 
 var columns = mongoose.model("data", columnSchema);
 
