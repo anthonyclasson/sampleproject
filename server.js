@@ -23,7 +23,7 @@ var db = mongoose.connect(connectionString);
 
 
 var columnSchema = new mongoose.Schema({
-    entry:[{"#Uploaded_variation": String,
+    "#Uploaded_variation": String,
     Location: String,
     Allele: String,
     Gene: String,
@@ -37,7 +37,7 @@ var columnSchema = new mongoose.Schema({
     Codons: String,
     Existing_variation:String,
     Extra: String
-    }]}, {collection: "data"});
+    }, {collection: "data"});
 
 var columns = mongoose.model("data", columnSchema);
 
