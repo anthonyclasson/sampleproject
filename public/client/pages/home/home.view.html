@@ -24,10 +24,16 @@
             <div>
                 <table class="table responsive-table">
                     <th ng-repeat="key in keys">{{key}}</th>                 
-                    <tr ng-repeat="column in columns | filter:search">
+                    <tr ng-repeat="column in columns | filter:search | limitTo:pageSize">
                         <td ng-repeat="key in keys">{{column[key]}}</td>
                     </tr>
                 </table>
+                <div class="row">
+                    <div class="displaying col-lg-6 col-md-5 col-sm-12 col-xs-12"><p>Displaying {{ columns.length > pageSize ? pageSize : columns.length }} of {{columns.length}}</p></div>
+                    <div class="paging col-lg-6 col-md-7 col-sm-12 col-xs-12">
+                    <div style="margin-top:0px;" pagination boundary-links="true" total-items="columns.length" items-per-page="pageSize" ng-model="page" max-size="5" rotate="false" class="pagination-md" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></div>
+                    </div>
+                </div>
             </div>
     </div>
 </div>
