@@ -18,7 +18,7 @@
         HomeService.findAllColumns()
           .then(function(response){
               $scope.columns = response;
-              $scope.keys = Object.values($scope.columns[0]);
+              $scope.keys = Object.keys($scope.columns[0]);
               //shift off mongo id property
               $scope.keys.shift();
               console.log($scope.keys);
